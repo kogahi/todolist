@@ -15,13 +15,7 @@ class TodoList extends Component {
 
       return(
         <ul>
-          {this.props.todos.map( todo =>
-            <Todo
-              key={todo.id}
-              {...todo}
-              onDelete = {this.props.onDelete}
-            />)
-         }
+         {todos}
         </ul>
       );
     }

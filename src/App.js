@@ -18,23 +18,23 @@ class App extends Component {
 
   handleSubmit(e){
     e.preventDefault();
-    const title = e.target.title.value;
+    const text = e.target.text.value;
     const todos = this.state.todos.slice();
     const countTodo = this.state.countTodo;
 
     todos.push({
       id:countTodo,
-      title:title,
+      text:text,
       done:false,
     });
 
     this.setState({todos})
     this.setState({countTodo: countTodo+1})
 
-    e.target.title.value = '';
+    e.target.text.value = '';
   }
 
-  onDelete(id){
+  handleDelete(id){
     const todos = this.state.todos.slice();
     const newTodos = this.state.todos.filter(todo => todo.id !== id);
     this.setState({todos: newTodos});
@@ -52,7 +52,7 @@ class App extends Component {
          <span className="column_status">状態</span>
         <TodoList
           todos={this.state.todos}
-          onDelete={this.onDelete}
+          onDelete={()=>this.handleDelete()}
           />
           <Form handleSubmit={this.handleSubmit.bind(this)}/>
       </div>
