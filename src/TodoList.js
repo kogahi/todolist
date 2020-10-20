@@ -15,7 +15,7 @@ class TodoList extends Component {
 
       return(
         <ul>
-         {todos}
+          {todos}
         </ul>
       );
     }

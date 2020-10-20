@@ -11,15 +11,16 @@ class Todo extends Component {
   // }
 
   render() {
+ 
     return(
       <li>
         <div className="list">
         <span classname="id">{this.props.id}</span>
         <div className="title">
-         <span >{this.props.text}</span>
+         <span >{this.props.title}</span>
         </div>
         <button className="status">作業中</button>
-        <button className="delete" onClick={this.props.onDelete(this.props)}>削除</button>
+        <button className="delete" onClick={this.props.onDelete}>削除</button>
         </div>
       </li>
     );

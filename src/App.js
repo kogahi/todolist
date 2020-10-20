@@ -10,6 +10,7 @@ class App extends Component {
   constructor() {
     super()
     const todos = []
+
     this.state = {
       todos: todos,
       countTodo: todos.length+1,
@@ -53,6 +54,7 @@ class App extends Component {
         <TodoList
           todos={this.state.todos}
           onDelete={()=>this.handleDelete()}
+
           />
           <Form handleSubmit={this.handleSubmit.bind(this)}/>
       </div>
