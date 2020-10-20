@@ -14,7 +14,7 @@ class App extends Component {
     this.state = {
       todos: todos,
       countTodo: todos.length+1,
-    }
+    };
   }
 
   handleSubmit(e){
@@ -53,10 +53,12 @@ class App extends Component {
          <span className="column_status">状態</span>
         <TodoList
           todos={this.state.todos}
-          onDelete={()=>this.handleDelete()}
+          onDelete={this.handleDelete}
 
           />
-          <Form handleSubmit={this.handleSubmit.bind(this)}/>
+          <Form 
+            handleSubmit={this.handleSubmit.bind(this)}
+            updateItem={this.updateItem}/>
       </div>
     );
   }
