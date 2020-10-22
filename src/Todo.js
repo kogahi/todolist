@@ -6,12 +6,12 @@ class Todo extends Component {
     return(
       <li>
         <div className="list">
-        <span classname="id">{this.props.id}</span>
-        <div className="title">
-         <span >{this.props.text}</span>
-        </div>
-        <button className="status">作業中</button>
-        <button className="delete" onClick={()=> this.props.onDelete(this.props.todo)}>削除</button>
+          <span classname="id">{this.props.id}</span>
+          <div className="title">
+           <span >{this.props.text}</span>
+          </div>
+          <button className="status">作業中</button>
+          <button className="delete" onClick={()=> this.props.onDelete(this.props.id)}>削除</button>
         </div>
       </li>
     );

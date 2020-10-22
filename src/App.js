@@ -10,10 +10,9 @@ class App extends Component {
   constructor() {
     super()
     const todos = []
-
     this.state = {
       todos: todos,
-      countTodo: todos.length+1,
+      countTodo: todos.length,
     };
   }
 
@@ -29,16 +28,18 @@ class App extends Component {
       done:false,
     });
 
-    this.setState({todos})
+    this.setState({todos:todos})
     this.setState({countTodo: countTodo+1})
-
     e.target.text.value = '';
   }
 
   handleDelete(id){
     const todos = this.state.todos.slice();
-    const newTodos = this.state.todos.filter(todo => todo.id !== id);
+    const newTodos = todos.filter(todo => todo.id !== id);
     this.setState({todos: newTodos});
+    console.log(this.state.todos[0].id);
+    const newCount = this.state.todos.length;
+    this.setState({countTodo:newCount});
   }
 
 
@@ -53,12 +54,11 @@ class App extends Component {
          <span className="column_status">状態</span>
         <TodoList
           todos={this.state.todos}
-          onDelete={this.handleDelete}
-
+          onDelete={this.handleDelete.bind(this)}
           />
-          <Form 
-            handleSubmit={this.handleSubmit.bind(this)}
-            updateItem={this.updateItem}/>
+        <Form 
+          handleSubmit={this.handleSubmit.bind(this)}
+        />
       </div>
     );
   }
