@@ -3,7 +3,6 @@ import Todo from './Todo';
 // import './TodoList.css';
 
 class TodoList extends Component {
-
     render() {
       const todos = this.props.todos.map( todo =>
         <Todo

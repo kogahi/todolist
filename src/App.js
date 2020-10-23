@@ -35,11 +35,13 @@ class App extends Component {
 
   handleDelete(id){
     const todos = this.state.todos.slice();
-    const newTodos = todos.filter(todo => todo.id !== id);
+    const deletedTodo = todos.filter(todo => todo.id !== id);
+    const newTodos = deletedTodo.map(function(value,index,array){
+        value.id = index
+        return value
+    })
     this.setState({todos: newTodos});
-    console.log(this.state.todos[0].id);
-    const newCount = this.state.todos.length;
-    this.setState({countTodo:newCount});
+    this.setState({countTodo: todos.length-1})
   }
 
 
