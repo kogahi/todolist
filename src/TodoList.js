@@ -3,13 +3,13 @@ import Todo from './Todo';
 // import './TodoList.css';
 
 class TodoList extends Component {
-
     render() {
       const todos = this.props.todos.map( todo =>
         <Todo
           key={todo.id}
           {...todo}
           onDelete = {this.props.onDelete}
+          statusChange = {this.props.statusChange}
         />
       )
 
