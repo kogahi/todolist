@@ -3,17 +3,17 @@
   padding: 10px;
 }
 
-.column1 {
+.column_id {
   font-weight: bold;
   margin-left: 10px;
 }
 
-.column2 {
+.column_comment {
   font-weight: bold;
   margin-left: 30px;
 }
 
-.column3 {
+.column_status {
   font-weight: bold;
   margin-left: 80px;
 }
