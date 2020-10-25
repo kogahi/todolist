@@ -36,7 +36,7 @@ class App extends Component {
   handleDelete(id){
     const todos = this.state.todos.slice();
     const deletedTodo = todos.filter(todo => todo.id !== id);
-    const newTodos = deletedTodo.map(function(value,index,array){
+    const newTodos = deletedTodo.map(function(value, index){
         value.id = index
         return value
     })
@@ -44,13 +44,10 @@ class App extends Component {
     this.setState({countTodo: todos.length-1})
   }
 
-
   render() {
     return (
       <div className="app">
         <h1>ToDoリスト</h1>
-        {/* ここにラジオボタン
-         */}
          <span className="column_id">ID</span>
          <span className="column_comment">コメント</span>
          <span className="column_status">状態</span>
