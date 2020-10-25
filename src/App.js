@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import TodoList from './TodoList';
 import Form from './Form';
+<<<<<<< HEAD
 import './css/App.css'
+=======
+import './css/App.css';
+>>>>>>> d47c35208397eef7d902f64a9d9812032976b9b2
 
 class App extends Component {
   constructor() {
