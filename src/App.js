@@ -42,7 +42,6 @@ class App extends Component {
   }
 
   handleStatusChange(id){ 
-    console.log(id)
     const todos = this.state.todos.slice();
     const todo = todos[id];
     todo.done = !todo.done;

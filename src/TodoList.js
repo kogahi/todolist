@@ -11,7 +11,6 @@ class TodoList extends Component {
           statusChange = {this.props.statusChange}
         />
       )
-
       return(
         <ul>
           {todos}

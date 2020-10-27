@@ -10,8 +10,10 @@ class Todo extends Component {
           <div className="title">
            <span >{this.props.text}</span>
           </div>
-          <button className="status" onClick={() => this.props.statusChange(this.props.id)}>
-             {this.props.done ? "完了" :"作業中"}</button>
+          <button className="status" 
+             onClick={() => this.props.statusChange(this.props.id)}>
+             {this.props.done ? "完了" :"作業中"}
+          </button>
           <button className="delete" onClick={()=> this.props.onDelete(this.props.id)}>削除</button>
         </div>
       </li>
