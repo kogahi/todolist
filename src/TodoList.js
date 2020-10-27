@@ -9,6 +9,7 @@ class TodoList extends Component {
           {...todo}
           onDelete = {this.props.onDelete}
          statusChange = {this.props.statusChange}
+         statusChange = {this.props.statusChange}
         />
       )
       return(
