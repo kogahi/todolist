@@ -6,7 +6,6 @@ import './css/App.css'
 
 
 class App extends Component {
-
   constructor() {
     super()
     const todos = []
