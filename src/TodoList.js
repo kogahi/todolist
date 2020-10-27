@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Todo from './Todo';
-// import './TodoList.css';
 
 class TodoList extends Component {
     render() {
@@ -9,6 +8,7 @@ class TodoList extends Component {
           key={todo.id}
           {...todo}
           onDelete = {this.props.onDelete}
+          statusChange = {this.props.statusChange}
         />
       )
 
