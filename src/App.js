@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TodoList from './TodoList';
 import Form from './Form';
-import './css/App.css';
+import './css/App.css'
 
 class App extends Component {
   constructor() {
@@ -41,15 +41,6 @@ class App extends Component {
     this.setState({countTodo: todos.length-1})
   }
 
-  handleStatusChange(id){ 
-    console.log(id)
-    const todos = this.state.todos.slice();
-    const todo = todos[id];
-    todo.done = !todo.done;
-    todos[id] = todo;
-    this.setState({todos: todos});
-  }
-
   render() {
     return (
       <div className="app">
@@ -60,7 +51,6 @@ class App extends Component {
         <TodoList
           todos={this.state.todos}
           onDelete={this.handleDelete.bind(this)}
-          statusChange={this.handleStatusChange.bind(this)}
           />
         <Form 
           handleSubmit={this.handleSubmit.bind(this)}
