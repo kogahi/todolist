@@ -42,11 +42,10 @@ class App extends Component {
   }
   
   handleStatusChange(id){ 
-    console.log(id)
     const todos = this.state.todos.slice();
-    const todo = todos[id];
+    const todo = todos.find(todo => todo.id === id);
+    console.log(todo.id);
     todo.done = !todo.done;
-    todos[id] = todo;
     this.setState({todos: todos});
   }
 
