@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TodoList from './TodoList';
 import Form from './Form';
+import Filter from './Filter';
 import './css/App.css'
 
 class App extends Component {
@@ -10,6 +11,7 @@ class App extends Component {
     this.state = {
       todos: todos,
       countTodo: todos.length,
+      filter:'all',
     };
   }
 
@@ -44,9 +46,12 @@ class App extends Component {
   handleStatusChange(id){ 
     const todos = this.state.todos.slice();
     const todo = todos.find(todo => todo.id === id);
-    console.log(todo.id);
     todo.done = !todo.done;
     this.setState({todos: todos});
+  }
+
+  changeRadio(e){
+    this.setState({filter:e.target.value})
   }
 
 
@@ -54,6 +59,10 @@ class App extends Component {
     return (
       <div className="app">
         <h1>ToDoリスト</h1>
+        <Filter
+          filter={this.state.filter}
+          changeRadio={this.changeRadio.bind(this)}
+         />
          <span className="column_id">ID</span>
          <span className="column_comment">コメント</span>
          <span className="column_status">状態</span>
@@ -61,6 +70,7 @@ class App extends Component {
           todos={this.state.todos}
           onDelete={this.handleDelete.bind(this)}
           statusChange={this.handleStatusChange.bind(this)}
+          filter={this.state.filter}
           />
         <Form 
           handleSubmit={this.handleSubmit.bind(this)}

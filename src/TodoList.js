@@ -10,10 +10,20 @@ class TodoList extends Component {
           onDelete = {this.props.onDelete}
          statusChange = {this.props.statusChange}
         />
-      )
+      );
+
+      var filteredTodo = [];
+      if(this.props.filter === 'all'){
+        filteredTodo = todos;
+      }else if(this.props.filter === 'uncompleted'){
+        filteredTodo = todos.filter( todo => todo.done);
+      }else{
+        filteredTodo = todos.filter( todo => todo.done == true);
+      }
+
       return(
         <ul>
-          {todos}
+          {filteredTodo}
         </ul>
       );
     }
