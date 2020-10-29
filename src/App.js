@@ -40,6 +40,15 @@ class App extends Component {
     this.setState({todos: newTodos});
     this.setState({countTodo: todos.length-1})
   }
+  
+  handleStatusChange(id){ 
+    const todos = this.state.todos.slice();
+    const todo = todos.find(todo => todo.id === id);
+    console.log(todo.id);
+    todo.done = !todo.done;
+    this.setState({todos: todos});
+  }
+
 
   render() {
     return (
@@ -51,6 +60,7 @@ class App extends Component {
         <TodoList
           todos={this.state.todos}
           onDelete={this.handleDelete.bind(this)}
+          statusChange={this.handleStatusChange.bind(this)}
           />
         <Form 
           handleSubmit={this.handleSubmit.bind(this)}
