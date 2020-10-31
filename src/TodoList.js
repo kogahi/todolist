@@ -12,13 +12,13 @@ class TodoList extends Component {
         />
       );
 
-      var filteredTodo = [];
+       var filteredTodo = [];
       if(this.props.filter === 'all'){
         filteredTodo = todos;
       }else if(this.props.filter === 'uncompleted'){
-        filteredTodo = todos.filter( todo => todo.done);
+        filteredTodo = todos.filter( todo => todo.props.done === false);
       }else{
-        filteredTodo = todos.filter( todo => todo.done == true);
+        filteredTodo = todos.filter( todo => todo.props.done === true);
       }
 
       return(
