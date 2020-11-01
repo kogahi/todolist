@@ -12,7 +12,7 @@ class TodoList extends Component {
         />
       );
 
-       var filteredTodo = [];
+       let filteredTodo = [];
       if(this.props.filter === 'all'){
         filteredTodo = todos;
       }else if(this.props.filter === 'uncompleted'){
